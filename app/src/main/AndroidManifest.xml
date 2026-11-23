@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 密码管理的正常入口需要这个权限（normal 级，安装时自动授予） -->
+    <uses-permission android:name="com.miui.passwords.permission.OPEN_SETTINGS" />
+
+    <queries>
+        <package android:name="com.xiaomi.finddevice" />
+        <package android:name="com.miui.passwords" />
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Jump.Transparent">
+
+        <!-- 图标一：查找设备 -->
+        <activity
+            android:name=".FindDeviceActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_find_device"
+            android:label="@string/shortcut_find_device"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Jump.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 图标二：密码管理 -->
+        <activity
+            android:name=".PasswordsActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:icon="@mipmap/ic_passwords"
+            android:label="@string/shortcut_passwords"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Jump.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
