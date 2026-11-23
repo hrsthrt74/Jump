@@ -23,6 +23,12 @@ android {
             isShrinkResources = true
             isDebuggable = false
         }
+        release {
+            // 用默认的调试密钥签名（~/.android/debug.keystore）
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = true
+            isShrinkResources = true
+        }
     }
 
     lint {
